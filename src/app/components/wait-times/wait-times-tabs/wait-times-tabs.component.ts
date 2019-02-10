@@ -19,11 +19,11 @@ export interface WaitTime {
 }
 
 @Component({
-  selector: 'app-wait-times',
-  templateUrl: './wait-times.component.html',
-  styleUrls: ['./wait-times.component.scss'],
+  selector: 'app-wait-times-tabs',
+  templateUrl: './wait-times-tabs.component.html',
+  styleUrls: ['./wait-times-tabs.component.scss'],
 })
-export class WaitTimesComponent implements OnInit {
+export class WaitTimesTabsComponent implements OnInit {
   public waitTimes: WaitTime[];
   public selectedTab = 'Animal Kingdom';
 

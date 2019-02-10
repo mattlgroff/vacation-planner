@@ -8,10 +8,11 @@
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
       [opened]="!(isHandset$ | async)"
     >
-      <mat-toolbar routerLink="/">Vacation Planner</mat-toolbar>
+      <mat-toolbar class="burgerTitle" routerLink="/"
+        >Vacation Planner</mat-toolbar
+      >
       <mat-nav-list>
         <a mat-list-item routerLink="/ticket-calculator">Ticket Calculator</a>
-        <a mat-list-item routerLink="/costs-calculator">Costs Calculator</a>
         <a mat-list-item routerLink="/wait-times">Wait Times</a>
       </mat-nav-list>
     </mat-sidenav>
@@ -24,9 +25,11 @@
           (click)="drawer.toggle()"
           *ngIf="(isHandset$ | async)"
         >
-          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+          <mat-icon aria-label="Side nav toggle icon">
+            <img class="menuIcon" src="assets/icons/hamburger.svg" />
+          </mat-icon>
         </button>
-        <span>vacation-planner</span>
+        <h1 class="title" routerLink="/">Vacation Planner</h1>
       </mat-toolbar>
       <main>
         <router-outlet></router-outlet>
