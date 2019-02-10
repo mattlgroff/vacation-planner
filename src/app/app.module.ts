@@ -16,6 +16,7 @@ import { LandingPageComponent } from './components/landing-page/landing-page.com
 import { HttpClientModule } from '@angular/common/http';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { PwaService } from './pwa.service';
 
 @NgModule({
   declarations: [NavbarComponent, LandingPageComponent],
@@ -34,7 +35,7 @@ import { environment } from '../environments/environment';
       enabled: environment.production,
     }),
   ],
-  providers: [],
+  providers: [PwaService],
   bootstrap: [NavbarComponent],
 })
 export class AppModule {}
