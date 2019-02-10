@@ -10,6 +10,8 @@ import {
   MatSidenavModule,
   MatIconModule,
   MatListModule,
+  MatTabsModule,
+  MatCardModule,
 } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
@@ -17,6 +19,11 @@ import { TicketCalculatorComponent } from './components/ticket-calculator-page/t
 import { TicketCalculatorPageComponent } from './components/ticket-calculator-page/ticket-calculator-page.component';
 import { CostsCalculatorPageComponent } from './components/costs-calculator-page/costs-calculator-page.component';
 import { WaitTimesPageComponent } from './components/wait-times-page/wait-times-page.component';
+import { WaitTimesComponent } from './components/wait-times-page/wait-times/wait-times.component';
+import { WaitTimesService } from './components/wait-times-page/wait-times/wait-times.service';
+import { HttpClientModule } from '@angular/common/http';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -26,9 +33,13 @@ import { WaitTimesPageComponent } from './components/wait-times-page/wait-times-
     TicketCalculatorPageComponent,
     CostsCalculatorPageComponent,
     WaitTimesPageComponent,
+    WaitTimesComponent,
   ],
   imports: [
     BrowserAnimationsModule,
+    MatCardModule,
+    MatTabsModule,
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     LayoutModule,
@@ -37,8 +48,9 @@ import { WaitTimesPageComponent } from './components/wait-times-page/wait-times-
     MatSidenavModule,
     MatIconModule,
     MatListModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
-  providers: [],
+  providers: [WaitTimesService],
   bootstrap: [NavbarComponent],
 })
 export class AppModule {}
