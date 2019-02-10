@@ -24,12 +24,14 @@
 </mat-tab-group>
 
 <ng-template #waitTimeCards>
-  <ng-container *ngFor="let ride of waitTimes">
-    <mat-card>
-      <mat-card-title>{{ ride.name }}</mat-card-title>
-      <mat-card-subtitle>{{ ride.waitTime }}</mat-card-subtitle>
-    </mat-card>
-  </ng-container>
+  <div class="cardContainer">
+    <ng-container *ngFor="let ride of waitTimes">
+      <mat-card>
+        <mat-card-title>{{ ride.name }}</mat-card-title>
+        <mat-card-subtitle>{{ ride.waitTime }}</mat-card-subtitle>
+      </mat-card>
+    </ng-container>
+  </div>
 </ng-template>
 
 <ng-template #loading>

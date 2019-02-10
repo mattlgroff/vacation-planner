@@ -1,2 +1,6 @@
-.mat-primary {
+.cardContainer {
+  overflow-y: scroll;
+  .mat-card {
+    margin: 15px;
+  }
 }

@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { LayoutModule } from '@angular/cdk/layout';
@@ -16,7 +15,6 @@ import { LandingPageComponent } from './components/landing-page/landing-page.com
 import { HttpClientModule } from '@angular/common/http';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
-import { PwaService } from './pwa.service';
 
 @NgModule({
   declarations: [NavbarComponent, LandingPageComponent],
@@ -35,7 +33,7 @@ import { PwaService } from './pwa.service';
       enabled: environment.production,
     }),
   ],
-  providers: [PwaService],
+  providers: [],
   bootstrap: [NavbarComponent],
 })
 export class AppModule {}
