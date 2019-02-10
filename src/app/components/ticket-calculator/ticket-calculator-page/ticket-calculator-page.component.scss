@@ -1,0 +1,17 @@
+.ticket-calculator-container {
+  padding: 15px;
+
+  .single-day-container {
+    float: left;
+    width: 50%;
+  }
+
+  .annual-pass-container {
+    float: right;
+    width: 50%;
+  }
+
+  .mat-form-field {
+    margin-bottom: 20px;
+  }
+}

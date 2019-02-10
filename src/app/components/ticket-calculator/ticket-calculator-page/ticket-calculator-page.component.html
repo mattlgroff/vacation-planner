@@ -1,3 +1,44 @@
-<p>
-  ticket-calculator-page works!
-</p>
+<div class="ticket-calculator-container">
+  <div class="single-day-container">
+    <mat-form-field>
+      <mat-label>Single Day Price</mat-label>
+      <input
+        type="number"
+        placeholder="0"
+        [ngModel]="singleDayPrice"
+        (ngModelChange)="singleDayPriceChange($event)"
+        matInput
+      />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Number of Days</mat-label>
+      <input
+        type="number"
+        placeholder="1"
+        [ngModel]="numOfDays"
+        (ngModelChange)="numOfDaysChange($event)"
+        matInput
+      />
+    </mat-form-field>
+  </div>
+
+  <div class="annual-pass-container">
+    <mat-form-field>
+      <mat-label>Annual Pass Price</mat-label>
+      <input
+        type="number"
+        placeholder="0"
+        [ngModel]="annualPassPrice"
+        matInput
+      />
+    </mat-form-field>
+  </div>
+
+  <div class="total-price">
+    <mat-form-field>
+      <mat-label>Compared Price</mat-label>
+      <input type="number" [ngModel]="totalPrice" disabled matInput />
+    </mat-form-field>
+  </div>
+</div>
