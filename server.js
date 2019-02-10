@@ -1,8 +1,10 @@
 //Install express server
 const express = require('express');
 const path = require('path');
+const compression = require('compression');
 
 const app = express();
+app.use(compression());
 const packageName = 'vacation-planner';
 
 // Serve only the static files form the dist directory
