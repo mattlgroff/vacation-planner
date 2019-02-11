@@ -1,6 +1,7 @@
 # VacationPlanner
 
 Work In Progress website for helpful tools when planning a Vacation.
+![Lighthouse Score](https://i.imgur.com/5y8S0Iu.jpg 'Lighthouse Score')
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.1.
 
