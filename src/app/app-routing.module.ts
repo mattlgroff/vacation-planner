@@ -15,6 +15,10 @@ const routes: Routes = [
     path: 'wait-times',
     loadChildren: './components/wait-times/wait-times.module#WaitTimesModule',
   },
+  {
+    path: 'weather',
+    loadChildren: './components/weather/weather.module#WeatherModule',
+  },
 ];
 
 @NgModule({

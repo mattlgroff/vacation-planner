@@ -13,7 +13,6 @@ import {
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { ServiceWorkerModule } from '@angular/service-worker';
-import { NguCarouselModule } from '@ngu/carousel';
 import { environment } from '../environments/environment';
 
 @NgModule({
@@ -29,7 +28,6 @@ import { environment } from '../environments/environment';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    NguCarouselModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
     }),

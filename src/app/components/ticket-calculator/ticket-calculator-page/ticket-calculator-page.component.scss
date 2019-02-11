@@ -1,6 +1,10 @@
 .ticket-calculator-container {
   padding: 15px;
 
+  .mat-form-field {
+    margin: 15px;
+  }
+
   .single-day-container {
     float: left;
     width: 50%;

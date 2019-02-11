@@ -7,7 +7,8 @@ import { Location } from '@angular/common';
 
 export const routeConstants = {
   '/ticket-calculator': 'Ticket Calculator',
-  '/wait-times': 'Wait Times',
+  '/wait-times': 'Wait Times at the Parks',
+  '/weather': 'Weather at the Castle',
 };
 
 @Component({

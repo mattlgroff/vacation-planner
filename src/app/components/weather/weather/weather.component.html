@@ -1,0 +1,11 @@
+<div class="weather-container">
+  <mat-card *ngFor="let forecast of forecasts">
+    <mat-card-title
+      >{{ forecast.name }},
+      {{ forecast.startTime | date: 'MMM d' }}</mat-card-title
+    >
+    <mat-card-subtitle> {{ forecast.shortForecast }}</mat-card-subtitle>
+    <img mat-card-image src="{{ forecast.icon }}" />
+    <mat-card-content>{{ forecast.detailedForecast }}</mat-card-content>
+  </mat-card>
+</div>
