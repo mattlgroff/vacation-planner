@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { TicketCalculatorPageComponent } from './ticket-calculator-page.component';
+import { FormsModule } from '@angular/forms';
+import { MatInputModule, MatFormFieldModule } from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('TicketCalculatorPageComponent', () => {
   let component: TicketCalculatorPageComponent;
@@ -8,9 +10,14 @@ describe('TicketCalculatorPageComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TicketCalculatorPageComponent ]
-    })
-    .compileComponents();
+      imports: [
+        BrowserAnimationsModule,
+        FormsModule,
+        MatInputModule,
+        MatFormFieldModule,
+      ],
+      declarations: [TicketCalculatorPageComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
