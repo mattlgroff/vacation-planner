@@ -1,17 +1,44 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { Router, NavigationEnd } from '@angular/router';
+import { Location } from '@angular/common';
+
+export const routeConstants = {
+  '/ticket-calculator': 'Ticket Calculator',
+  '/wait-times': 'Wait Times',
+};
 
 @Component({
   selector: 'app-root',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss'],
 })
-export class NavbarComponent {
-  isHandset$: Observable<boolean> = this.breakpointObserver
+export class NavbarComponent implements OnDestroy {
+  public isHandset$: Observable<boolean> = this.breakpointObserver
     .observe(Breakpoints.Handset)
     .pipe(map(result => result.matches));
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  public routerSubscription: Subscription;
+  public route = 'Vacation Planner';
+
+  constructor(
+    private breakpointObserver: BreakpointObserver,
+    private router: Router,
+    private location: Location,
+  ) {
+    this.routerSubscription = router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        const path = location.path();
+        this.route = path !== '' ? routeConstants[path] : 'Vacation Planner';
+      }
+    });
+  }
+
+  public ngOnDestroy() {
+    if (this.routerSubscription) {
+      this.routerSubscription.unsubscribe();
+    }
+  }
 }

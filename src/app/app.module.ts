@@ -11,13 +11,13 @@ import {
   MatListModule,
 } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { LandingPageComponent } from './components/landing-page/landing-page.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { NguCarouselModule } from '@ngu/carousel';
 import { environment } from '../environments/environment';
 
 @NgModule({
-  declarations: [NavbarComponent, LandingPageComponent],
+  declarations: [NavbarComponent],
   imports: [
     BrowserAnimationsModule,
     HttpClientModule,
@@ -29,6 +29,7 @@ import { environment } from '../environments/environment';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
+    NguCarouselModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
     }),

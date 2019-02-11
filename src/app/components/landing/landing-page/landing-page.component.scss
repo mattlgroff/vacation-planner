@@ -1,0 +1,20 @@
+.landing-page-container {
+  .top-section {
+    background-color: #7b00a0;
+    height: 15vh;
+    p {
+      margin: 0 auto;
+      text-align: center;
+    }
+  }
+
+  .bottom-section {
+    background: none;
+    height: 85vh;
+
+    .carousel-section {
+      margin: 0 auto;
+      width: 85%;
+    }
+  }
+}

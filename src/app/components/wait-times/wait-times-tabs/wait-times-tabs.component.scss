@@ -1,6 +1,9 @@
 .cardContainer {
-  overflow-y: scroll;
   .mat-card {
     margin: 15px;
   }
+}
+
+.mat-drawer {
+  overflow-y: scroll;
 }
