@@ -1,11 +1,19 @@
 <div class="weather-container">
-  <mat-card *ngFor="let forecast of forecasts">
-    <mat-card-title
-      >{{ forecast.name }},
-      {{ forecast.startTime | date: 'MMM d' }}</mat-card-title
-    >
-    <mat-card-subtitle> {{ forecast.shortForecast }}</mat-card-subtitle>
-    <img mat-card-image src="{{ forecast.icon }}" />
-    <mat-card-content>{{ forecast.detailedForecast }}</mat-card-content>
-  </mat-card>
+  <ng-container *ngIf="forecasts; else loading">
+    <mat-card *ngFor="let forecast of forecasts">
+      <mat-card-title
+        >{{ forecast.name }},
+        {{ forecast.startTime | date: 'MMM d' }}</mat-card-title
+      >
+      <mat-card-subtitle> {{ forecast.shortForecast }}</mat-card-subtitle>
+      <img mat-card-image src="{{ forecast.icon }}" />
+      <mat-card-content>{{ forecast.detailedForecast }}</mat-card-content>
+    </mat-card>
+  </ng-container>
 </div>
+
+<ng-template #loading>
+  <mat-card>
+    LOADING...
+  </mat-card>
+</ng-template>
